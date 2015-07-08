@@ -1,0 +1,15 @@
+<footer class="footer-basic-centered">
+  <p class="footer-company-motto">Rails apps fast</p>
+  <p class="footer-links">
+    <% if user_signed_in? %>
+      <a><%= link_to("home", root_path) %></a>
+      ·
+      <a><%= link_to("sign out", destroy_user_session_path, method: :delete) %></a>
+    <% else %>
+      <a><%= link_to("home", root_path) %></a>
+      ·
+      <a><%= link_to("premium", new_user_registration_path) %></a>
+    <% end %>
+  </p>
+  <p class="footer-company-name">Awesome Project &copy; 2015</p>
+</footer>

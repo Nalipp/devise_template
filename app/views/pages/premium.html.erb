@@ -1,0 +1,99 @@
+
+        <div class="container container-blank">
+          <h1> Blog template </h1></br>
+            <h3>prerequisites :</h3>
+              <h4>sign up for a heroku <a href='https://heroku.com'>account</a></h4>
+              <h4>dowload heroku <a href='https://toolbelt.heroku.com/'>toolbelt</a></h4>
+            <h3></h3>
+            <pre class='textarea'>
+              <code>
+                $ cd ~/workspace
+                $ rails new blog_app --no-ri --no-rdoc
+                $ cd blog_app/
+              </code>
+            </pre>
+            <h3></h3>
+            <h4><a href='https://rubygems.org/gems/bootstrap-sass/versions/3.3.5' target= '_blank'>gem 'bootstrap-sass'</a></h4>
+            <h4><a href='https://github.com/twbs/bootstrap-sass' target= '_blank'>github documentation</a></h4>
+            <pre class='textarea'>
+              <code>
+                $ bundle install
+                $ bundle update
+                $ rails server
+              </code>
+            </pre>
+            <h3></h3>
+            <pre class='textarea'>
+              <code>
+                $ rails generate controller StaticPages home blog about contact
+              </code>
+            </pre>
+            <h3></h3>
+            <p>Updates routes.rb file</p>
+              <ul class='list-unstyled unstyled'>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/config/routes.rb' target='_blank'>routes.rb</a></li>
+              </ul>
+            <p>Copy the html files from the github template or make your own.</p>
+              <ul class='list-unstyled unstyled'>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/pages/home.html.erb' target='_blank'>home.html.erb</a></li>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/pages/blog.html.erb' target='_blank'>blog.html.erb</a></li>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/pages/about.html.erb' target='_blank'>about.html.erb</a></li>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/pages/contact.html.erb' target='_blank'>contact.html.erb</a></li>
+              </ul>
+            <p>Create shim files for layouts/application.html.erb page.</p>
+              <ul class='list-unstyled unstyled'>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/layouts/_shim.html.erb' target='_blank'>_shim.html.erb</a></li>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/layouts/_header.html.erb' target='_blank'>_header.html.erb</a></li>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/layouts/_footer.html.erb' target='_blank'>_footer.html.erb</a></li>
+              </ul>
+            <p>Copy layouts/application.html.erb html file.</p>
+              <ul class='list-unstyled unstyled'>
+                <li><a href='https://github.com/Nalipp/blog_tutorial/blob/master/app/views/layouts/application.html.erb' target='_blank'>application.html.erb</a></li>
+              </ul>
+              <h3></h3>
+            <p>Update gemfile to deploy to heroku</p>
+              <h4><a href='https://rubygems.org/gems/rails_12factor/versions/0.0.3' target= '_blank'>gem 'rails_12factor'</a></h4>
+              <h4><a href='http://www.rubydoc.info/gems/rails_12factor/0.0.3' target= '_blank'>github documentation</a></h4>
+              <h4><a href='https://rubygems.org/gems/pg/versions/0.18.2' target= '_blank'>gem 'pg'</a></h4>
+              <h4><a href='http://www.rubydoc.info/gems/rails_12factor/0.0.3' target= '_blank'>github documentation</a></h4>
+            <h3></h3>
+              <pre class='textarea'>
+                <code>
+                  group :production do
+                    gem 'pg'
+                    gem 'rails_12factor'
+                  end
+                </code>
+              </pre>
+              <h3></h3>
+              <p>move gem 'sqlite3' to development</p>
+              <pre class='textarea'>
+                <code>
+                  group :development, :test do
+                    gem 'sqlite3'
+                    gem 'byebug'
+                    gem 'web-console'
+                    gem 'spring'
+                  end
+                </code>
+              </pre>
+              <h3></h3>
+                <pre class='textarea'>
+                  <code>
+                    $ bundle install --without production
+                    $ git commit -a -m "update heroku"
+                    $ heroku login
+                    $ heroku keys:add
+                    $ heroku create
+                    $ git push heroku master
+                    $ heroku rename
+                  </code>
+                </pre>
+              <h1>provide info for changing links</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
