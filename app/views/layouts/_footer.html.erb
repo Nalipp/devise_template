@@ -4,7 +4,7 @@
     <% if user_signed_in? %>
       <a><%= link_to("home", root_path) %></a>
       ·
-      <a><%= link_to("sign out", destroy_user_session_path, method: :delete) %></a>
+      <a><%= link_to("profile", edit_user_registration_path) %></a>
     <% else %>
       <a><%= link_to("home", root_path) %></a>
       ·

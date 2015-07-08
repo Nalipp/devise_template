@@ -1,28 +1,23 @@
 
         <div class="container container-blank">
           <h1> Blog template </h1></br>
-            <h3>prerequisites :</h3>
-              <h4>sign up for a heroku <a href='https://heroku.com'>account</a></h4>
-              <h4>dowload heroku <a href='https://toolbelt.heroku.com/'>toolbelt</a></h4>
             <h3></h3>
+            <h4><a href='https://rubygems.org/gems/devise/versions/3.5.1' target= '_blank'>gem 'devise'</a></h4>
+            <h4><a href='https://github.com/plataformatec/devise' target= '_blank'>github documentation</a></h4>
             <pre class='textarea'>
               <code>
-                $ cd ~/workspace
-                $ rails new blog_app --no-ri --no-rdoc
-                $ cd blog_app/
-              </code>
-            </pre>
-            <h3></h3>
-            <h4><a href='https://rubygems.org/gems/bootstrap-sass/versions/3.3.5' target= '_blank'>gem 'bootstrap-sass'</a></h4>
-            <h4><a href='https://github.com/twbs/bootstrap-sass' target= '_blank'>github documentation</a></h4>
-            <pre class='textarea'>
-              <code>
+                $ rails generate devise:install
+                $ rails generate devise User
+                $ rails g devise:views
+                $ rake db:migrate
+                $ rake routes | grep user
                 $ bundle install
                 $ bundle update
                 $ rails server
               </code>
             </pre>
             <h3></h3>
+            <p>Update the navbar routes (example)</p> <p>To find the app routes ---- $ rake routes | grep user </p>
             <pre class='textarea'>
               <code>
                 $ rails generate controller StaticPages home blog about contact
